@@ -1,8 +1,5 @@
 import { DataTypes, Model } from "sequelize";
-<<<<<<< HEAD
-=======
 import { postgres } from "../config/db/connectPostgres";
->>>>>>> master
 
 class Users extends Model {}
 
@@ -28,12 +25,6 @@ Users.init(
     },
   },
   {
-<<<<<<< HEAD
-    sequelize: require("../config/database"),
-    timestamps: true,
-  },
-);
-=======
     sequelize: postgres,
     timestamps: true,
     modelName: "Users",
@@ -42,4 +33,3 @@ Users.init(
 );
 
 export default Users;
->>>>>>> master

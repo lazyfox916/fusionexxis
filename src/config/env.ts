@@ -4,7 +4,4 @@ dotenv.config();
 export const DATABASE_URL = process.env.DATABASE_URL;
 export const SSL = process.env.SSL;
 export const REDIS_URI = process.env.REDIS_URL;
-<<<<<<< HEAD
-=======
 export const JWT_SECRET = process.env.JWT_SECRET;
->>>>>>> master

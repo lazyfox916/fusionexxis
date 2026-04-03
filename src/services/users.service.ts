@@ -15,6 +15,11 @@ export async function signUpUserService(data: UserData) {
   const email = data.email?.trim().toLowerCase();
   const password = data.password;
 
+  const emailExists = await Users.findOne({ where: { email } });
+  if (emailExists) {
+    throw new AppError("Email already in use", 409);
+  }
+
   if (!name) throw new AppError("Name is required", 400);
   if (!email) throw new AppError("Email is required", 400);
   if (!password) throw new AppError("Password is required", 400);
