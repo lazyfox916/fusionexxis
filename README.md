@@ -36,7 +36,7 @@ npm install
 npm run dev
 ```
 
-API base URL: `http://localhost:5000`
+API base URL: `http://localhost:8080`
 
 ## Environment Variables
 
