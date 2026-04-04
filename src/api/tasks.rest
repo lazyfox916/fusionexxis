@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:8080
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU0ZTI2ZjI2LTYxZjAtNDA1MS1hYmRlLTU5YzUwNWYxY2VhMCIsImVtYWlsIjoibGF6eWZveDkxNkBnbWFpbC5jb20iLCJpYXQiOjE3NzUzMTk2NjMsImV4cCI6MTc3NTMyMzI2M30.fN5GoollPRCrMzauGqZnInoLuf56sBY3eujmztwpn4M
+
+###
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "Test Task",
+  "description": "This is a test task",
+  "status": "pending"
+}
+
+###
+GET {{baseUrl}}/api/tasks?page=1&limit=5
+Authorization: {{token}}
+
+###
+GET {{baseUrl}}/api/tasks/289468a9-1d96-4bd1-b2fe-7cf6563ec46f
+Authorization: {{token}}
+
+###
+PUT {{baseUrl}}/api/tasks/289468a9-1d96-4bd1-b2fe-7cf6563ec46f
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "Updated Test Task",
+  "description": "This is an updated test task",
+  "status": "completed"
+}
+
+###
+DELETE {{baseUrl}}/api/tasks/289468a9-1d96-4bd1-b2fe-7cf6563ec46f
+Authorization: {{token}}

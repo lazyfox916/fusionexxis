@@ -19,10 +19,19 @@ export async function createTaskService(taskData: TaskData) {
   return sanitizeTaskResponse(task);
 }
 
-export async function getAllTasksService() {
-  const tasks = await Tasks.findAll();
+export async function getAllTasksService(page = 1, limit = 10) {
+  const offset = (page - 1) * limit;
 
-  return tasks.map((task) => sanitizeTaskResponse(task));
+  const { rows, count } = await Tasks.findAndCountAll({
+    limit,
+    offset,
+    order: [["createdAt", "DESC"]],
+  });
+
+  return {
+    count,
+    rows: rows.map((task) => sanitizeTaskResponse(task)),
+  };
 }
 
 export async function getTaskByIdService(taskId: string) {

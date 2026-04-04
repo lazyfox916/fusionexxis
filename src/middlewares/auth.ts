@@ -1,4 +1,5 @@
 import { Response } from "express";
+import type { JwtPayload } from "jsonwebtoken";
 import { verifyToken } from "../utils/jwt";
 
 export async function isAuthenticated(req: any, res: any, next: any) {
@@ -18,7 +19,10 @@ export async function isAuthenticated(req: any, res: any, next: any) {
 
     const decoded = await verifyToken(tokenString);
 
-    req._id = decoded?.id;
+    const payload =
+      typeof decoded === "string" ? undefined : (decoded as JwtPayload);
+
+    req._id = (payload as any)?.id;
     next();
   } catch (error) {
     return res.status(401).json({

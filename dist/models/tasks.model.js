@@ -25,7 +25,7 @@ Tasks.init({
     assignedTo: {
         type: sequelize_1.DataTypes.UUID,
         references: {
-            model: "Users",
+            model: "users",
             key: "id",
         },
         onUpdate: "CASCADE",

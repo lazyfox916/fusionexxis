@@ -5,27 +5,34 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "seed": "ts-node-dev --transpile-only src/scripts/script.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@types/nodemailer": "^7.0.11",
     "bcryptjs": "^3.0.3",
+    "bullmq": "^5.73.0",
     "dotenv": "^17.4.0",
     "express": "^5.2.1",
     "ioredis": "^5.10.1",
     "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^8.0.4",
     "pg": "^8.20.0",
     "sequelize": "^6.37.8",
+    "swagger-ui-express": "^5.0.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.5.0",
+    "@types/swagger-ui-express": "^4.1.8",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.2"
   }

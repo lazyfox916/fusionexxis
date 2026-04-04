@@ -1,0 +1,142 @@
+[
+  {
+    "id": "a1b2c3d4-1111-4a2b-8c1d-000000000001",
+    "title": "Design login page",
+    "description": "Create responsive login UI",
+    "status": "pending",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "a1b2c3d4-2222-4b3c-9d2e-000000000002",
+    "title": "Build signup API",
+    "description": "Implement user registration",
+    "status": "in_progress",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "a1b2c3d4-3333-4c4d-8e3f-000000000003",
+    "title": "Setup Redis queue",
+    "description": "Integrate BullMQ",
+    "status": "completed",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  },
+  {
+    "id": "a1b2c3d4-4444-4d5e-9f4a-000000000004",
+    "title": "Fix worker bug",
+    "description": "Debug email worker",
+    "status": "in_progress",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  },
+  {
+    "id": "a1b2c3d4-5555-4e6f-8a5b-000000000005",
+    "title": "Write API docs",
+    "description": "Prepare documentation",
+    "status": "pending",
+    "assignedTo": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303"
+  },
+  {
+    "id": "a1b2c3d4-6666-4f7a-9b6c-000000000006",
+    "title": "Implement pagination",
+    "description": "Add pagination in tasks",
+    "status": "completed",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "a1b2c3d4-7777-4a8b-8c7d-000000000007",
+    "title": "Create dashboard",
+    "description": "Add analytics cards",
+    "status": "pending",
+    "assignedTo": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303"
+  },
+  {
+    "id": "a1b2c3d4-8888-4b9c-9d8e-000000000008",
+    "title": "Optimize queries",
+    "description": "Improve DB performance",
+    "status": "in_progress",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  },
+  {
+    "id": "a1b2c3d4-9999-4c0d-8e9f-000000000009",
+    "title": "Add validation",
+    "description": "Zod validation setup",
+    "status": "completed",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "a1b2c3d4-aaaa-4d1e-9f0a-000000000010",
+    "title": "Email templates",
+    "description": "Create HTML templates",
+    "status": "pending",
+    "assignedTo": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303"
+  },
+  {
+    "id": "a1b2c3d4-bbbb-4e2f-8a1b-000000000011",
+    "title": "Setup CI/CD",
+    "description": "Add GitHub Actions",
+    "status": "in_progress",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  },
+  {
+    "id": "a1b2c3d4-cccc-4f3a-9b2c-000000000012",
+    "title": "Deploy backend",
+    "description": "Deploy to VPS",
+    "status": "completed",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "a1b2c3d4-dddd-4a4b-8c3d-000000000013",
+    "title": "Add logging",
+    "description": "Winston logger setup",
+    "status": "pending",
+    "assignedTo": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303"
+  },
+  {
+    "id": "a1b2c3d4-eeee-4b5c-9d4e-000000000014",
+    "title": "Rate limiting",
+    "description": "Protect APIs",
+    "status": "completed",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  },
+  {
+    "id": "a1b2c3d4-ffff-4c6d-8e5f-000000000015",
+    "title": "Refactor code",
+    "description": "Improve structure",
+    "status": "in_progress",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "b1c2d3e4-1111-4d7e-9f6a-000000000016",
+    "title": "Add caching",
+    "description": "Redis caching",
+    "status": "pending",
+    "assignedTo": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303"
+  },
+  {
+    "id": "b1c2d3e4-2222-4e8f-8a7b-000000000017",
+    "title": "Fix bugs",
+    "description": "Resolve issues",
+    "status": "in_progress",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  },
+  {
+    "id": "b1c2d3e4-3333-4f9a-9b8c-000000000018",
+    "title": "Add tests",
+    "description": "Unit testing",
+    "status": "completed",
+    "assignedTo": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101"
+  },
+  {
+    "id": "b1c2d3e4-4444-4a0b-8c9d-000000000019",
+    "title": "Improve UI",
+    "description": "Better UX",
+    "status": "pending",
+    "assignedTo": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303"
+  },
+  {
+    "id": "b1c2d3e4-5555-4b1c-9d0e-000000000020",
+    "title": "Monitor system",
+    "description": "Add monitoring",
+    "status": "completed",
+    "assignedTo": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202"
+  }
+]

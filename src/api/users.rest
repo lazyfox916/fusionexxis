@@ -1,24 +1,30 @@
-POST http://localhost:5000/api/users/register
+@baseUrl = http://localhost:8080
+@token = 
+
+###
+POST {{baseUrl}}/api/users/register
 Content-Type: application/json
 
 {
-    "name": "testuser",
-    "email": "lazyfox916@gmail.com",
-    "password": "testpassword"
+  "name": "testuser",
+  "email": "lazyfox916@gmail.com",
+  "password": "testpassword"
 }
 
 ###
 
-POST http://localhost:5000/api/users/login
+POST {{baseUrl}}/api/users/login
 Content-Type: application/json
 
 {
-    "email": "lazyfox916@gmail.com",
-    "password": "testpassword"
+  "email": "lazyfox916@gmail.com",
+  "password": "testpassword"
 }
 
 ###
-GET http://localhost:5000/api/users/
+GET {{baseUrl}}/api/users/
+Authorization: Bearer {{token}}
 
 ###
-GET http://localhost:5000/api/users/1fcf6d10-0d95-4c5d-942f-fdc5ea8c18c1
+GET {{baseUrl}}/api/users/1fcf6d10-0d95-4c5d-942f-fdc5ea8c18c1
+Authorization: Bearer {{token}}

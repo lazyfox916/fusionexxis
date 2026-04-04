@@ -5,3 +5,5 @@ export const DATABASE_URL = process.env.DATABASE_URL;
 export const SSL = process.env.SSL;
 export const REDIS_URI = process.env.REDIS_URL;
 export const JWT_SECRET = process.env.JWT_SECRET;
+export const SMTP_EMAIL = process.env.SMTP_EMAIL;
+export const SMTP_PASS = process.env.SMTP_PASS;

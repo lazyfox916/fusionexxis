@@ -1,0 +1,20 @@
+[
+  {
+    "id": "7f3a2c91-5d44-4c2f-8e1a-91d6b7c3a101",
+    "name": "Aaryan Sharma",
+    "email": "lazyfox916@gmail.com",
+    "password": "testpassword"
+  },
+  {
+    "id": "2c8e1f44-9b7a-4d3e-a6c2-4f91b7d2e202",
+    "name": "Niraj Khadka",
+    "email": "niraj@example.com",
+    "password": "hello@123"
+  },
+  {
+    "id": "5a1d9e73-3c2b-4f8a-b7d1-8e24c6f4b303",
+    "name": "Sabina Shrestha",
+    "email": "sabina@example.com",
+    "password": "quickbrownfox@gmail.com"
+  }
+]

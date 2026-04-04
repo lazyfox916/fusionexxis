@@ -1,4 +1,5 @@
 import Users from "../models/users.model";
+import { addEmailToQueue } from "../queues/emailQueue";
 import { AppError } from "../utils/AppError";
 import { comparePassword, hashPassword } from "../utils/bcrypt";
 import { generateToken } from "../utils/jwt";
@@ -15,18 +16,26 @@ export async function signUpUserService(data: UserData) {
   const email = data.email?.trim().toLowerCase();
   const password = data.password;
 
+  if (!name) throw new AppError("Name is required", 400);
+  if (!email) throw new AppError("Email is required", 400);
+  if (!password) throw new AppError("Password is required", 400);
+
   const emailExists = await Users.findOne({ where: { email } });
   if (emailExists) {
     throw new AppError("Email already in use", 409);
   }
 
-  if (!name) throw new AppError("Name is required", 400);
-  if (!email) throw new AppError("Email is required", 400);
-  if (!password) throw new AppError("Password is required", 400);
-
   const hashedPassword = await hashPassword(password);
 
   const user = await Users.create({ name, email, password: hashedPassword });
+
+  addEmailToQueue({
+    to: email,
+    subject: "Welcome to Fusionexis",
+    body: `Hi ${name}, welcome to Fusionexis. Your account has been created successfully.`,
+  }).catch((err) => {
+    console.error("Failed to enqueue welcome email:", err);
+  });
 
   return user;
 }
@@ -40,7 +49,7 @@ export async function loginUserService(data: UserData) {
 
   const user = await Users.findOne({ where: { email } });
 
-  const hashedPassword = user?.password || null;
+  const hashedPassword = (user as any)?.password || null;
 
   if (!user || !hashedPassword) {
     throw new AppError("Invalid Credentials", 401);

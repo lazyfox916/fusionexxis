@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config/env";
+import { AppError } from "./AppError";
 
 export function generateToken(user: any) {
   const payload = {
@@ -19,6 +20,6 @@ export function verifyToken(token: string) {
     const decoded = jwt.verify(token, JWT_SECRET as string);
     return decoded;
   } catch (error) {
-    throw new Error("Invalid token");
+    throw new AppError("Invalid token", 401);
   }
 }

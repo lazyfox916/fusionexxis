@@ -13,17 +13,23 @@ exports.connectRedis = void 0;
 const Redis = require("ioredis");
 const { REDIS_URI } = require("../env");
 const connectRedis = () => {
-    const redis = new Redis(REDIS_URI);
-    redis.on("connect", () => {
-        console.info("\x1b[38;5;34m ✅ Redis Connected Successfully \x1b[0m");
+    const redisUrl = REDIS_URI !== null && REDIS_URI !== void 0 ? REDIS_URI : "redis://127.0.0.1:6380";
+    if (!REDIS_URI) {
+        console.warn("REDIS_URL not set; defaulting to redis://127.0.0.1:6380");
+    }
+    const redis = new Redis(redisUrl, {
+        maxRetriesPerRequest: null,
     });
     redis.on("error", (err) => {
-        console.error("\x1b[31m ❌ Redis Connection Error:", err, "\x1b[0m");
+        console.error("\x1b[31m Redis Connection Error:", err, "\x1b[0m");
     });
     (() => __awaiter(void 0, void 0, void 0, function* () {
-        yield redis.set("test_key", "Hello Redis!");
-        const value = yield redis.get("test_key");
-        console.info("\x1b[38;5;34, 🔑 Test_KEY:", value, "\x1b[0m");
+        try {
+            yield redis.set("test_key", "Hello Redis!");
+        }
+        catch (err) {
+            console.error("Redis test failed:", err);
+        }
     }))();
     return redis;
 };
